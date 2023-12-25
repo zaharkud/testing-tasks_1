@@ -1,0 +1,15 @@
+.table th {
+  cursor: pointer;
+  padding: 20px;
+  min-width: 70px;
+}
+
+.table th.sort-up::after {
+  content: " ▲";
+}
+.table th.sort-down::after {
+  content: " ▼";
+}
+
+
+

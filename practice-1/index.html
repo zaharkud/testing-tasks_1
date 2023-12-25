@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/style.css" rel="stylesheet"/>
+  <title>Document</title>
+</head>
+<body>
+  <section class="contacts">
+    <div class="container">
+      <div class="contacts__content">
+        <a href="#modal">Вызвать всплывающее окно</a>
+        <div class="contacts__example-block">
+
+        </div>
+      </div>
+      <div id="modal">
+        <div class="form-wrapper">
+          <form method="post" class="form" >
+            <h2 class="form__title">Стать партнёром проекта</h2>
+            <div class="form__top">
+              
+              <div class="form__top-left">
+                <div class="field-with-descr">
+                  <label class="field-label field-label--required">Название организации</label>
+                  <input type="text" name="organization" required>
+                </div>
+                <div class="field-with-descr">
+                  <label class="field-label field-label--required">Телефон</label>
+                  <input type="tel" name="telephone" required>
+                </div>
+                <div class="field-with-descr">
+                  <label class="field-label field-label--required">E-mail</label>
+                  <input type="email" name="email" required>
+                </div>
+              </div>
+    
+              <div class="form__top-right logo-section">
+                  <span class="logo-section__title">Логотип (jpeg, png)</span>
+                  <label class="logo-uploader">
+                    <input type="file" name="logo" required onchange="updateImagePreview(event)" class="logo-uploader__input">
+                    <img src="./img/logo-example-img.png" class="logo-uploader__preview" alt="logo"/>
+                    <span class="logo-uploader__add-file-btn">Выберите файл</span> 
+                  </label>
+                  <span class="logo-section__delete-file-btn" onclick="deleteImagePreview(event)"></span>
+              </div>
+            </div>
+      
+            <div class="form__bottom">
+              <div class="field-with-descr">
+                <label class="field-label field-label--required">Направление</label>
+                <select name="direction" required>
+                  <option value="ecology">Экология</option>
+                  <option value="construction">Строительство</option>
+                  <option value="it">Интернет-технологии</option>
+                </select>
+              </div>
+              
+              <div class="field">
+                <input type="url" name="website">
+                <img src="./img/input-icons/website-icon.svg" />
+              </div>
+              <div class="field">
+                <input type="url" name="social-vk">
+                <img src="./img/input-icons/vk-icon.svg" />
+              </div>
+              <div class="field">
+                <input type="url" name="social-ok">
+                <img src="./img/input-icons/ok-icon.svg" />
+              </div>
+              <div class="field">
+                <input type="url" name="social-facebook">
+                <img src="./img/input-icons/fb-icon.svg" />
+              </div>
+              <div class="field">
+                <input type="url" name="social-instagram">
+                <img src="./img/input-icons/instagram-icon.svg" />
+              </div>
+              <div class="field">
+                <input type="url" name="social-youtube">
+                <img src="./img/input-icons/youtube-icon.svg" />
+              </div>
+            
+              <div class="field-with-descr">
+                <label class="field-label">Руководитель</label>
+                <input type="text" name="director">
+              </div>
+          
+            </div>
+            <div class="form__btns">
+              <button type="submit" class="btn">Стать партнёром проекта</button>
+              <a href="#" class="btn-simple">Отменить</a>
+            </div>
+          </form>
+      </div>
+      </div>
+    </div>
+  </section>
+  <script src="./main.js"></script>
+</body>
+</html>

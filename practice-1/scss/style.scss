@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap");
+
+$text-color-dark: #0c1014;
+$text-color-light: #6a6e72;
+
+$color-danger: #d90000;
+$color-accent: #e5266e;
+$color-accent-hover: #d82469;
+
+$border-light: 1px solid #d6dade;
+$border-dark: 1px solid #bbbbbb;
+
+$border-radius: 4px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+button,
+select,
+input {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: $text-color-dark;
+}
+
+.container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.contacts {
+  background-color: #ffffff;
+
+  &__content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__example-block {
+    width: 100%;
+    height: 20px;
+    background-color: $color-accent;
+  }
+}
+
+#modal {
+  background: rgba(0, 0, 0, 0.42);
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+
+  &:target {
+    display: block;
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: white;
+  padding: 53px 97px;
+  display: flex;
+  flex-direction: column;
+  margin: 10vh 30px;
+
+  @media (max-width: 600px) {
+    padding: 40px 55px;
+    margin: 5vh 20px;
+  }
+  @media (max-width: 450px) {
+    padding: 25px 35px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 121%;
+    margin-bottom: 35px;
+  }
+  & input,
+  select {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    line-height: 150%;
+    background-color: white;
+  }
+  & select {
+    -webkit-appearance: none;
+    background: url("../img/arrow-icon.svg") right top -5px no-repeat;
+  }
+
+  &__top {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+
+    @media (max-width: 770px) {
+      flex-direction: column;
+    }
+  }
+  &__top-left {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  &__top-rigth {
+    display: flex;
+    flex-direction: column;
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+.field {
+  max-width: 100%;
+  padding: 16px;
+  border: $border-light;
+  border-radius: $border-radius;
+  display: flex;
+  align-items: center;
+
+  & img {
+    height: 20px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 450px) {
+    & img {
+      height: 17px;
+    }
+  }
+}
+
+.field-with-descr {
+  display: inline-block;
+  padding: 8px 16px 0 16px;
+  border: $border-light;
+  border-radius: $border-radius;
+
+  & input,
+  select {
+    margin-bottom: 0;
+    border: none;
+    outline: none;
+    display: block;
+    padding: 3px 16px 11px 0;
+  }
+}
+.field-label {
+  font-size: 12px;
+  line-height: 133%;
+  color: $text-color-light;
+  position: relative;
+
+  &--required {
+    padding-left: 12px;
+  }
+  &--required::after {
+    content: "*";
+    position: absolute;
+    font-size: 20px;
+    top: 4px;
+    left: 0;
+    color: $color-danger;
+  }
+}
+
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: $text-color-light;
+    font-weight: 700;
+    line-height: 133%;
+    position: relative;
+    padding-left: 12px;
+  }
+  &__title::before {
+    content: "*";
+    position: absolute;
+    font-size: 18px;
+    top: 4px;
+    left: 0;
+    color: $color-danger;
+  }
+  &__delete-file-btn {
+    position: absolute;
+    z-index: 150;
+    bottom: 70%;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    border-radius: 50%;
+    background-image: url("../img/close-icon.svg");
+    background-size: contain;
+
+    @media (max-width: 770px) {
+      bottom: 60%;
+      left: 70%;
+    }
+  }
+}
+.logo-uploader {
+  border-radius: 50%;
+  width: 163px;
+  height: 163px;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  cursor: pointer;
+
+  &__input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  &__preview {
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+  &__add-file-btn {
+    background: url("../img/upload-icon.svg") center calc(50% - 50px) no-repeat;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 100;
+    word-spacing: 1000vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    z-index: 100;
+    color: white;
+    text-decoration-line: underline;
+    line-height: 150%;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+.form__btns {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  line-height: 112%;
+  background-color: $color-accent;
+  cursor: pointer;
+  border-radius: $border-radius;
+  transition: background-color 0.3s;
+  white-space: normal;
+
+  &:hover {
+    background-color: $color-accent-hover;
+  }
+}
+.btn-simple {
+  cursor: pointer;
+  transition: color 0.3s;
+  color: $text-color-dark;
+
+  &:hover {
+    color: $text-color-light;
+  }
+}
