@@ -14,7 +14,7 @@ function waitBeforeDataIsLoaded(func, ...params) {
 }
 
 async function getAndShowResponseData() {
-  const responseData = await fetch("https://jsonplaceholder.typicode.com/posts?_page=0&_limit=10");
+  const responseData = await fetch("https://jsonplaceholder.typicode.com/posts");
   content = await responseData.json();
 
   paintTableData(content);
